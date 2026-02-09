@@ -1,0 +1,6 @@
+# mpd helper files 
+.config/mpd/mpd.pid
+.config/mpd/mpdstate
+.config/mpd/database
+.config/mpd/sticker.sql
+.config/nvim/lazy-lock.json

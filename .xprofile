@@ -1,0 +1,2 @@
+export GDK_BACKEND=x11
+export XCURSOR_THEME=BreezeX-Dark

@@ -1,0 +1,18 @@
+[colors.primary]
+foreground = "#ffffff"
+background = "#000000"
+dim_foreground = "#908caa"
+bright_foreground = "#939393"
+
+[colors.normal]
+green = "#117554"
+blue = "#9ccfd8"
+
+[colors.bright]
+green = "#0D7C66"
+blue = "#9ccfd8"
+
+[colors.dim]
+green = "#117554"
+blue = "#9ccfd8"
+

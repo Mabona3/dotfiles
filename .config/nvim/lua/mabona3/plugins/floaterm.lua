@@ -1,0 +1,43 @@
+return {
+    -- {
+    --     'voldikss/vim-floaterm',
+    --     -- config = function()
+    --     --   -- Define Floaterm keymaps for both normal and terminal modes
+    --     --   local keymap_opts = { noremap = true, silent = true }
+    --     --   local floaterm_cmds = {
+    --     --     { '<leader>fj', 'FloatermNew' },
+    --     --     { '<leader>fo', 'FloatermNew' },
+    --     --     { '<leader>fh', 'FloatermHide' },
+    --     --     { '<leader>fs', 'FloatermShow' },
+    --     --     { '<leader>fn', 'FloatermNext' },
+    --     --     { '<leader>fp', 'FloatermPrev' },
+    --     --     { '<leader>ft', 'FloatermToggle' },
+    --     --     { '<leader>fk', 'FloatermKill' }
+    --     --   }
+    --     --
+    --     --   -- Map each key combination to the Floaterm commands for normal and terminal modes
+    --     --   for _, cmd in ipairs(floaterm_cmds) do
+    --     --     vim.api.nvim_set_keymap('n', cmd[1], '<cmd>' .. cmd[2] .. '<CR>', keymap_opts)
+    --     --     -- vim.api.nvim_set_keymap('t', cmd[1], '<cmd>' .. cmd[2] .. '<CR>', keymap_opts)
+    --     --   end
+    --
+    --             local cwd = vim.fn.fnamemodify(vim.fn.getcwd(), ':t')
+
+    --              vim.keymap.set('n', '<leader>cM', '<cmd>FloatermNew make<CR>', { noremap = true, silent = true })
+    --vim.api.nvim_set_keymap('n', '<leader>cm','<cmd>FloatermNew make && make run && read<CR>', { noremap = true, silent = true })
+    --     -- end
+    -- },
+    -- {
+    --     'akinsho/toggleterm.nvim',
+    --     config = function()
+    --         require('toggleterm').setup {
+    --             open_mapping = { [[<C-g>]] },
+    --             direction = 'float',
+    --             terminal_mappings = true,
+    --         }
+    --         vim.keymap.set('n', '<leader>cM', '<cmd>TermExec cmd="make"<CR>', { noremap = true, silent = true })
+    --         vim.api.nvim_set_keymap('n', '<leader>cm', '<cmd>TermExec cmd="make && make run"<CR>',
+    --             { noremap = true, silent = true })
+    --     end
+    -- }
+}

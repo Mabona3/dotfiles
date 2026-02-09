@@ -1,0 +1,10 @@
+-- local awful = require('awful')
+-- 
+-- return {
+--   awful.key({ modkey }, "F3", function () awful.util.spawn("amixer sset Master 5%+") end,
+--   {description = "Volume Up", group = "Mabona3"}),
+--   awful.key({ modkey }, "F1", function () awful.util.spawn("amixer sset Master 5%-") end,
+--   {description = "Volume Down", group = "Mabona3"}),
+--   awful.key({ modkey }, "F2", function () awful.util.spawn("amixer sset Master toggle") end,
+--   {description = "Volume Mute", group = "Mabona3"}),
+-- }

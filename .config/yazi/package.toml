@@ -1,0 +1,14 @@
+[[plugin.deps]]
+use = "yazi-rs/plugins:no-status"
+rev = "2301ff8"
+hash = "3e023d31f29201efdac2a6ae35fedb78"
+
+[[plugin.deps]]
+use = "boydaihungst/mediainfo"
+rev = "1099409"
+hash = "77e78e16578e8f5a37475c04d8324619"
+
+[[flavor.deps]]
+use = "marcosvnmelo/kanagawa-dragon"
+rev = "4905527"
+hash = "5fd7aa0bf4e7d9753ad8a4660a6eb94f"

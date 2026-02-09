@@ -1,0 +1,10 @@
+[window]
+decorations = "None"
+opacity = 0.8
+startup_mode = "fullscreen"
+dynamic_padding = false
+dynamic_title = false
+decorations_theme_variant = "Dark"
+
+[terminal]
+shell = { program = "/bin/zsh", args = ["-c", "tmux attach-session -t default >/dev/null 2>&1 || tmux new-session -s default "] }

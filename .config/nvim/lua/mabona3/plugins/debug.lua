@@ -1,0 +1,47 @@
+return {
+--     {
+--         'mfussenegger/nvim-dap',
+--         dependencies = {
+--             "rcarriga/nvim-dap-ui",
+--             "nvim-neotest/nvim-nio",
+--         },
+--         event = 'VeryLazy',
+--         config = function()
+--             local _ = require('dap');
+--         end
+--     },
+--     {
+--         'mfussenegger/nvim-jdtls',
+--         -- cond = function()
+--         --     return vim.fn.filereadable(vim.fn.getcwd() .. "/pom.xml")
+--         -- end,
+--         -- config = function()
+--         --     local jdtls = require("jdtls")
+--         --
+--         --     local bundles = {}
+--         --
+--         --     vim.list_extend(
+--         --         bundles,
+--         --         vim.fn.glob(
+--         --             vim.fn.stdpath("data")
+--         --             .. "/mason/packages/java-debug-adapter/extension/server/com.microsoft.java.debug.plugin-*.jar",
+--         --             true,
+--         --             true
+--         --         )
+--         --     )
+--         --
+--         --     local config = {
+--         --         cmd = { "jdtls" },
+--         --         root_dir = jdtls.setup.find_root({ "pom.xml", "build.gradle", ".git" }),
+--         --         init_options = {
+--         --             bundles = bundles,
+--         --         },
+--         --         settings = {
+--         --
+--         --         },
+--         --     }
+--         --
+--         --     jdtls.start_or_attach(config)
+--         -- end
+--     }
+}

@@ -1,0 +1,97 @@
+window#waybar {
+  background: rgba(0, 0, 0, 0);
+  color: white;
+}
+
+* {
+  font-family: "JetBrains Mono", "Font Awesome 6 Free", sans-serif;
+  font-weight: 600;
+  font-size: 10px;
+}
+
+/* Workspace Button */
+
+#workspaces {
+  background: rgba(0, 0, 0, 0);
+  margin: 0px 3px
+}
+
+#workspaces button {
+  background: rgba(100, 100, 100, 0.3);
+  margin: 0 3px;
+  color: white;
+  padding: 3px;
+  border-radius: 9999px;
+}
+
+button:hover {
+  border: 1px solid cyan
+}
+
+#workspaces button.focused {
+  border: 1px solid rgba(0, 255, 255, 0.3);
+}
+
+#workspaces button.active {
+  border: 1px solid rgba(0, 255, 255, 0.3);
+}
+
+#backlight {
+  margin-right: 0;
+}
+
+#pulseaudio {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#battery,
+#battery#bat2 {
+  padding: 0 8px;
+  margin: 0 3px;
+  background-color: rgba(255, 100, 100, 0.8);
+  border-radius: 12px;
+}
+
+#custom-prayer,
+#clock,
+#network,
+#battery.full,
+#battery.charging,
+#cpu,
+#pulseaudio,
+#power-profiles-daemon,
+#cpu,
+#network,
+#memory,
+#tray,
+#custom-media,
+#custom-forward,
+#custom-previous,
+#custom-fileManager,
+#mpd,
+#backlight,
+#temperature,
+#custom-power {
+  padding: 0 8px;
+  background: rgba(100, 100, 100, 0.4);
+  margin: 0 3px;
+  color: white;
+  border-radius: 12px;
+}
+
+#temperature.critical,
+#network.disconnected {
+  background-color: rgba(255, 100, 100, 0.8)
+}
+
+
+/* 
+#custom-power {
+    padding: 0 10px;
+    background: rgba(200, 100, 100, 0.3);
+    margin: 0 3px;
+    color: white;
+    border-radius: 12px;
+}
+*/

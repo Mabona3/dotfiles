@@ -1,0 +1,51 @@
+# Window Settings
+background-opacity = 0.8
+
+fullscreen = true
+window-decoration = false
+title = "Ghostty"
+command = "tmux attach-session -t default >/dev/null 2>&1 || tmux new-session -s default "
+
+# background-blur-radius = 20
+
+# font
+font-size = 8
+font-family = "iosevka"
+
+# cursor
+cursor-style-blink = false 
+
+# theme
+theme = ""
+
+# notifications
+confirm-close-surface = false
+
+# kanagawa dragon
+palette = 0=#020c0c
+palette = 1=#c4746e
+palette = 2=#8a9a7b
+palette = 3=#c4b28a
+palette = 4=#8ba4b0
+palette = 5=#a292a3
+palette = 6=#8ea4a2
+palette = 7=#c8c093
+# palette = 7=#ffffff
+palette = 8=#a6a69c
+palette = 9=#e46876
+palette = 10=#87a987
+palette = 11=#e6c384
+palette = 12=#7fb4ca
+palette = 13=#938aa9
+palette = 14=#7aa89f
+palette = 15=#c5c9c5
+# palette = 15=#ffffff
+
+background = 000000
+# foreground = ffffff
+foreground = c5c9c5
+#
+# cursor-color = c8c093
+cursor-color = c5c9c5
+selection-background = 2d4f67
+selection-foreground = ffffff

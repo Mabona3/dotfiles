@@ -1,0 +1,17 @@
+window {
+    font-family: "0xProtoNerdFont";
+    margin: 0;
+    border: 1px solid rgba(0,0,0,0.9);
+    outline: none;
+    background-color: rgba(29,31,33,0.5);
+    border-radius:10px;
+    color: white;
+}
+
+#input {
+    margin: 5px;
+    border: none;
+    background-color: rgba(29,31,33,0.5);
+    border-radius:10px;
+    color: white;
+}
