@@ -32,5 +32,7 @@ vim.keymap.set("n", "<leader>d", ":bun<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>x", ":bun!<CR>", { noremap = true, silent = true })
 
 -- Terminal creation
+vim.keymap.set('n', '<leader>ts', '<cmd>vsp | terminal<cr><cmd>setlocal nobuflisted<CR>i',
+  { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>tc', '<cmd>tabnew | terminal<cr><cmd>setlocal nobuflisted<CR>i',
   { noremap = true, silent = true })
