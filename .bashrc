@@ -26,6 +26,8 @@ export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
 # Include user specific binaries
 PATH="${HOME}/.local/bin:${HOME}/bin::/usr/local/go/bin:${GOPATH}/bin:${HOME}/.npm-packages/bin:${HOME}/.local/share/gem/ruby/3.3.0/bin:${HOME}/.cargo/bin:$PATH"
 
+alias vim='nvim'
+
 alias c="cd"
 alias ..="c .."
 alias ...="c ../.."
@@ -61,12 +63,10 @@ do
     shopt -s "${option}" 2> /dev/null
 done
 
-# Load private env vars from a .env file, if available
-if [ -f ~/.env ]; then
-    source ~/.env
-    export $(cut -d= -f1 ~/.env)
-fi
-
 eval "$(/bin/starship init bash --print-full-init)"
 
-~/shell/padded_logo ~/shell/logo.txt `echo -e '\e[38;2;195;64;67m'`
+# kanagawa color
+# ~/shell/padded_logo ~/shell/logo.txt `echo -e '\e[38;2;195;64;67m'`
+
+# # rose pine
+~/shell/padded_logo ~/shell/logo.txt `echo -e '\e[38;2;49;72;143m'`

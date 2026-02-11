@@ -36,7 +36,7 @@ input type:keyboard {
 bindsym $mod+Return exec $term
 bindsym $mod+c kill
 bindsym $mod+b exec $browser
-bindsym $mod+d exec $menu
+bindsym $mod+d exec pidof $menu || $menu
 bindsym $mod+u exec $files
 bindsym $mod+T exec pidof swaync-client || swaync-client -t
 bindsym $mod+y exec pidof swaync-client || swaync-client --close-all
@@ -111,7 +111,7 @@ bindsym $mod+e layout toggle split
 
 bindsym $mod+f fullscreen
 
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+f floating toggle
 
 bindsym $mod+a focus parent
 

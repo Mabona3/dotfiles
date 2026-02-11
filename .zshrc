@@ -19,6 +19,8 @@ PATH="${HOME}/.local/bin:${HOME}/bin:/usr/local/bin:/usr/local/sbin:/usr/local/g
 bindkey -e
 bindkey \^U backward-kill-line
 
+alias vim='nvim'
+
 alias c=cd
 
 alias ..="cd .."
@@ -54,5 +56,10 @@ PERL_MM_OPT="INSTALL_BASE=/home/mabona3/perl5"; export PERL_MM_OPT;
 
 eval "$(/bin/starship init zsh)"
 
-~/shell/padded_logo ~/shell/logo.txt `echo -e '\e[38;2;195;64;67m'`
+# kanagawa color
+# ~/shell/padded_logo ~/shell/logo.txt `echo -e '\e[38;2;195;64;67m'`
+
+# # rose pine
+~/shell/padded_logo ~/shell/logo.txt `echo -e '\e[38;2;49;72;143m'`
+
 tput sgr0

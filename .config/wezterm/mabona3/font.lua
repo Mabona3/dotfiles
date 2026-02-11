@@ -1,10 +1,22 @@
 local wezterm = require('wezterm');
 
 return function(config)
+  local font = {}
+  font[0] = 'Terminus'
+  font[1] = 'Iosevka'
+  font[2] = 'JetBrains Mono'
+  local weight = {}
+  weight[0] = 'Regular'
+  weight[1] = 'Light'
+  weight[2] = 'ExtraLight'
+  weight[3] = 'Bold'
+
   config.font = wezterm.font_with_fallback({
-    -- 'Terminus',
-    'Iosevka light',
-    'JetBrains Mono ExtraLight',
+    {
+      family = font[1],
+      weight = weight[1],
+    },
+    "SymbolsNerd",
     'Noto Color Emoji',
     'Noto Naskh Arabic',
   });
