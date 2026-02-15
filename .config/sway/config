@@ -8,7 +8,9 @@ set $right l
 
 set $term wezterm
 set $browser zen-browser
-set $menu bemenu-run
+set $menu bemenu-run 
+set $menu_flags --fn 'iosevka 9' --hf '#c34043' --tf "#c34043" --tb "#000000cc" --fb "#000000cc" --nb "#000000cc" --hb "#000000cc" --sb "#000000cc" --ab "##3C3C3Ccc" -R 6
+
 set $files nemo
 
 exec swaybg -i $(find ~/wallpaper/ -type f | shuf -n1)
@@ -36,7 +38,7 @@ input type:keyboard {
 bindsym $mod+Return exec $term
 bindsym $mod+c kill
 bindsym $mod+b exec $browser
-bindsym $mod+d exec pidof $menu || $menu
+bindsym $mod+d exec (pidof $menu || $menu $menu_flags)
 bindsym $mod+u exec $files
 bindsym $mod+T exec pidof swaync-client || swaync-client -t
 bindsym $mod+y exec pidof swaync-client || swaync-client --close-all

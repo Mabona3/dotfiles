@@ -5,6 +5,7 @@ return function(config)
   font[0] = 'Terminus'
   font[1] = 'Iosevka'
   font[2] = 'JetBrains Mono'
+  font[3] = 'NotoSans Mono'
   local weight = {}
   weight[0] = 'Regular'
   weight[1] = 'Light'
@@ -16,8 +17,8 @@ return function(config)
       family = font[1],
       weight = weight[1],
     },
-    "SymbolsNerd",
     'Noto Color Emoji',
+    "SymbolsNerd",
     'Noto Naskh Arabic',
   });
 
