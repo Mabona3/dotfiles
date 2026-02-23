@@ -53,8 +53,7 @@ alias gcl='git clone'
 alias gst='git status'
 alias ga='git add'
 alias gc='git commit'
-alias glog='git --no-pager log --oneline'
-
+alias glog="git --no-pager log --decorate --graph --pretty=format:'%C(auto)%h %d %s %C(green)(%cr) %C(blue)[%an <%ae>]'"
 shopt -s nocaseglob
 shopt -s histappend
 shopt -s cdspell

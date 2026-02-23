@@ -10,7 +10,7 @@ title = "Ghostty"
 
 # font
 font-size = 10
-font-family = "iosevka"
+# font-family = "iosevka"
 
 # cursor
 cursor-style-blink = false 

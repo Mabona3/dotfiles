@@ -9,7 +9,7 @@ set $right l
 set $term wezterm
 set $browser zen-browser
 set $menu bemenu-run 
-set $menu_flags --fn 'iosevka 9' --hf '#c34043' --tf "#c34043" --tb "#000000cc" --fb "#000000cc" --nb "#000000cc" --hb "#000000cc" --sb "#000000cc" --ab "##3C3C3Ccc" -R 6
+set $menu_flags --fn 'JetBrains Mono 9' --hf '#c34043' --tf "#c34043" --tb "#000000cc" --fb "#000000cc" --nb "#000000cc" --hb "#000000cc" --sb "#000000cc" --ab "##3C3C3Ccc" -R 6
 
 set $files nemo
 
