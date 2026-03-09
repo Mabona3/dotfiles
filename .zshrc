@@ -38,6 +38,8 @@ alias ll="ls -l --color=auto"
 alias ls="ls --color=auto"
 alias l="ls --color=auto"
 
+alias disk="cd /mnt/DATA"
+
 playlist_time() {
 for f in *.mp4; do
   ffprobe -v error -show_entries format=duration \
@@ -57,9 +59,9 @@ PERL_MM_OPT="INSTALL_BASE=/home/mabona3/perl5"; export PERL_MM_OPT;
 eval "$(/bin/starship init zsh)"
 
 # kanagawa color
-# ~/shell/padded_logo ~/shell/logo.txt `echo -e '\e[38;2;195;64;67m'`
+~/shell/padded_logo ~/shell/logo.txt `echo -e '\e[38;2;195;64;67m'`
 
 # # rose pine
-~/shell/padded_logo ~/shell/logo.txt `echo -e '\e[38;2;49;72;143m'`
+# ~/shell/padded_logo ~/shell/logo.txt `echo -e '\e[38;2;49;72;143m'`
 
 tput sgr0

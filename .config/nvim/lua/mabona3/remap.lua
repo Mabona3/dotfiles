@@ -7,20 +7,21 @@ keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 keymap.set("n", "J", "mxJ`x")
 
 keymap.set("x", "<leader>p", "\"_dP")
+keymap.set("t", "<C-[>", "<c-\\><c-n>")
 
 keymap.set("n", "<leader>y", "\"+y")
 keymap.set("n", "<leader>p", "\"+p")
 keymap.set("v", "<leader>y", "\"+y")
 keymap.set("v", "<leader>y", "\"+y")
 
--- return to normal mode using <C-j> and <C-c>
-keymap.set({ "i", "v", "s" }, "<C-c>", "<Esc>")
-
 -- Terminal Like navigation in the insert mode
 keymap.set("i", '<a-b>', '<C-left>')
 keymap.set("i", '<a-f>', '<C-right>')
 keymap.set("i", '<c-b>', '<left>')
 keymap.set("i", '<c-f>', '<right>')
+
+keymap.set("n", '<c-u>', '<c-u>zz');
+keymap.set("n", '<c-d>', '<c-d>zz');
 
 -- Terminal Mode pane naviation and tabs navigation
 keymap.set("t", "<a-h>", "<c-\\><c-n><c-w>h");
@@ -57,6 +58,7 @@ vim.keymap.set("n", "<leader>xp", "<cmd>bnext<CR><cmd>bun! #<CR>", { noremap = t
 
 vim.keymap.set("n", "gs", "<cmd>vsp<cr>", { noremap = true, silent = true })
 vim.keymap.set("n", "gS", "<cmd>sp<cr>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>gs", "<cmd>tabnew %<cr>", { noremap = true, silent = true })
 -- Terminal creation
 vim.keymap.set('n', '<leader>ts', '<cmd>vsp | terminal<cr><cmd>setlocal nobuflisted<CR>i',
   { noremap = true, silent = true })

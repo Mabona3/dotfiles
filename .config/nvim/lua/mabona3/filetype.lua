@@ -38,10 +38,6 @@ vim.api.nvim_create_autocmd("FileType", {
     local opts = { noremap = true, silent = true }
     local bufnr = args.buf
 
-    vim.opt.tabstop = 4
-    vim.opt.softtabstop = 4
-    vim.opt.shiftwidth = 4
-
     vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>cr', '<cmd>vs | terminal npm run dev<cr>i', opts)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>cg', '<cmd>vs | terminal node %<cr>i', opts)
   end

@@ -218,9 +218,10 @@
         "on-click-middle": "close"
     },
     "custom/prayer": {
-        "format": "{}",
-        "return-type": "text",
-        "exec": "cat /tmp/prayer-notify.txt",
-        "interval": 10
+        "format": "{text}",
+        "tooltip": true,
+        "exec": "cat /tmp/prayer-notify.json",
+        "return-type": "json",
+        "interval": 1
     }
 }
