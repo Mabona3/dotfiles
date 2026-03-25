@@ -64,4 +64,6 @@ eval "$(/bin/starship init zsh)"
 # # rose pine
 # ~/shell/padded_logo ~/shell/logo.txt `echo -e '\e[38;2;49;72;143m'`
 
-tput sgr0
+# ~/shell/padded_logo ~/shell/logo.txt
+
+# tput sgr0

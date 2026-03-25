@@ -3,9 +3,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <sys/ioctl.h>
 #include <unistd.h>
 #include <wchar.h>
-#include <sys/ioctl.h>
 
 #define BUFFER_SIZE 1024
 wchar_t buffer[BUFFER_SIZE];
@@ -33,7 +33,7 @@ int add_prefix(const char *prefix) {
 
   mbstate_t state = {0};
   size_t converted = mbsnrtowcs(wcs, &prefix, len, len, &state);
-  if (converted == -1) {
+  if (converted == (size_t)-1) {
     return 1;
   }
   wcs[converted] = L'\0';
