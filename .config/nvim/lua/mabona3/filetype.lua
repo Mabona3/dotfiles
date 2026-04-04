@@ -19,6 +19,9 @@ vim.api.nvim_create_autocmd("FileType", {
   callback = function(args)
     local opts = { noremap = true, silent = true }
     local bufnr = args.buf
+    vim.opt.tabstop = 2
+    vim.opt.softtabstop = 2
+    vim.opt.shiftwidth = 2
     vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>cg',
       '<cmd>vs | terminal mkdir -p Debug && cd Debug && cmake .. && make<cr>i', opts)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>cr',

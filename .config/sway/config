@@ -26,9 +26,9 @@ exec swayidle -w timeout 1500 'swaylock -f -c 000000' timeout 2400 'swaymsg "out
 input "1739:32183:SYNA7DB5:00_06CB:7DB7_Touchpad" {
   dwt enabled
 
-    tap enabled
-    natural_scroll enabled
-    middle_emulation enabled
+  tap enabled
+  natural_scroll enabled
+  middle_emulation enabled
 }
 
 
@@ -48,7 +48,7 @@ bindsym $mod+y exec pidof swaync-client || swaync-client --close-all
 
 bindsym $mod+Shift+n exec pkill swaybg && swaybg -i $(find ~/wallpaper/ -type f | shuf -n1)
 
-bindsym $mod+PAUSE exec swaylock -f -c 000000
+bindsym $mod+Shift+PAUSE exec swaylock -f -c 000000
 bindsym $mod+Shift+z exec grim -g "$(slurp)"
 bindsym $mod+PRINT exec grim
 
@@ -57,29 +57,30 @@ floating_modifier $mod normal
 bindsym $mod+r reload
 bindsym $mod+Shift+q exec swaymsg exit
 
-bindsym $mod+$left focus left
-bindsym $mod+$down focus down
-bindsym $mod+$up focus up
+bindsym $mod+$left  focus left
+bindsym $mod+$down  focus down
+bindsym $mod+$up    focus up
 bindsym $mod+$right focus right
 
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+bindsym $mod+Left   focus left
+bindsym $mod+Down   focus down
+bindsym $mod+Up     focus up
+bindsym $mod+Right  focus right
 
-bindsym $mod+Shift+$left move left
-bindsym $mod+Shift+$down move down
-bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$left  move left
+bindsym $mod+Shift+$down  move down
+bindsym $mod+Shift+$up    move up
 bindsym $mod+Shift+$right move right
 
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+Left   move left
+bindsym $mod+Shift+Down   move down
+bindsym $mod+Shift+Up     move up
+bindsym $mod+Shift+Right  move right
 
-bindsym $mod+Tab workspace next
-bindsym $mod+Shift+Tab workspace prev
+bindsym $mod+Tab        workspace next
+bindsym $mod+Shift+Tab  workspace prev
 
+bindsym $mod+PAUSE exec playerctl --all-players play-pause
 bindsym PAUSE exec mpd & mpc toggle
 bindsym $mod+F11 exec mpd & mpc toggle
 bindsym $mod+F10 exec mpc prev
