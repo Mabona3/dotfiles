@@ -15,15 +15,15 @@ local beautiful = require("beautiful")
 require('mabona3')
 
 require("awful.hotkeys_popup.keys")
-require('collision')()
+-- require('collision')()
 
 APPS = {
   terminal = "alacritty",
   editor = os.getenv("EDITOR") or "nvim",
-  -- launcher = "rofi -show drun",
-  launcher = "dmenu_run",
-  browser = "chromium",
-  file_manager = "nautilus",
+  launcher = "rofi -show drun",
+  -- launcher = "dmenu_run",
+  browser = "zen-browser",
+  file_manager = "dolphin",
 }
 
 local clientkeys = gears.table.join(
@@ -103,7 +103,7 @@ awful.rules.rules = {
   {
     rule_any = {
       instance = {
-        "DTA", -- Firefox addon DownThemAll.
+        "DTA",   -- Firefox addon DownThemAll.
         "copyq", -- Includes session name in class.
         "pinentry",
       },
@@ -112,7 +112,7 @@ awful.rules.rules = {
         "Blueman-manager",
         "Gpick",
         "Kruler",
-        "MessageWin", -- kalarm.
+        "MessageWin",  -- kalarm.
         "Sxiv",
         "Tor Browser", -- Needs a fixed window size to avoid fingerprinting by screen size.
         "Wpa_gui",

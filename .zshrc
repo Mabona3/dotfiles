@@ -14,31 +14,14 @@ export HISTFILESIZE="${HISTSIZE}"
 export HISTCONTROL='ignoreboth'
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules}/*" 2> /dev/null'
 
-PATH="${HOME}/.local/bin:${HOME}/bin:/usr/local/bin:/usr/local/sbin:/usr/local/go/bin:${HOME}/go/bin:${HOME}/.npm-packages/bin:${HOME}/.local/share/gem/ruby/3.3.0/bin:$PATH"
+PATH="${HOME}/.local/bin:${HOME}/bin:/usr/local/bin:/usr/local/sbin:/usr/local/go/bin:${HOME}/go/bin:${HOME}/.npm-packages/bin:${HOME}/.local/share/gem/ruby/3.3.0/bin:${HOME}/.cargo/bin:$PATH"
 
 bindkey -e
 bindkey \^U backward-kill-line
 
 alias vim='nvim'
 
-alias c=cd
-
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias .....="cd ../../../.."
-alias ......="cd ../../../../.."
-alias .......="cd ../../../../../.."
-alias ........="cd ../../../../../../.."
-alias .........="cd ../../../../../../../.."
-
-alias la="ls -lhaF --color=auto"
-alias lla="ls -lhaF --color=auto"
-alias ll="ls -l --color=auto"
-alias ls="ls --color=auto"
-alias l="ls --color=auto"
-
-alias disk="cd /mnt/DATA"
+alias glog="git --no-pager log --decorate --graph --pretty=format:'%C(auto)%h %d %s %C(green)(%cr) %C(blue)[%an <%ae>]'"
 
 playlist_time() {
 for f in *.mp4; do
@@ -59,11 +42,20 @@ PERL_MM_OPT="INSTALL_BASE=/home/mabona3/perl5"; export PERL_MM_OPT;
 eval "$(/bin/starship init zsh)"
 
 # kanagawa color
-~/shell/padded_logo ~/shell/logo.txt `echo -e '\e[38;2;195;64;67m'`
+# ~/shell/padded_logo ~/shell/logo.txt `echo -e '\e[38;2;195;64;67m'`
 
 # # rose pine
 # ~/shell/padded_logo ~/shell/logo.txt `echo -e '\e[38;2;49;72;143m'`
 
-# ~/shell/padded_logo ~/shell/logo.txt
+# purple
+# ~/shell/padded_logo ~/shell/logo.txt `echo -e '\e[38;2;211;138;234m'`
+
+# neon
+# ~/shell/padded_logo ~/shell/logo.txt `echo -e '\e[38;2;31;166;141m'`
+
+~/shell/padded_logo ~/shell/logo.txt
+
+# nord
+# ~/shell/padded_logo ~/shell/logo.txt `echo -e '\e[38;2;129;161;193m'`
 
 # tput sgr0

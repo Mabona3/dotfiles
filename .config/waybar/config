@@ -6,13 +6,13 @@
     "modules-left": [
         "clock",
         "custom/prayer",
-        // "hyprland/window",
-        "sway/mode",
-        "sway/window"
+        "hyprland/window"
+        // "sway/mode",
+        // "sway/window"
     ],
     "modules-center": [
-        "sway/workspaces"
-        // "hyprland/workspaces"
+        // "sway/workspaces"
+        "hyprland/workspaces"
     ],
     "modules-right": [
         "custom/forward",
@@ -26,11 +26,6 @@
         "cpu"
 //        "custom/power"
     ],
-    "keyboard-state": {
-        "numlock": true,
-        "capslock": true,
-        "format": "{name}"
-    },
     "sway/window": {
         "icon": true
     },
@@ -86,7 +81,7 @@
         "state-icons": {
             "paused": "",
             "playing": ""
-        },
+        }
     },
     "idle_inhibitor": {
         "format": "{icon}",

@@ -1,0 +1,7 @@
+-- local current_playlist = 0;
+--
+-- mp.observe_property("duration", "number", function(name, value)
+--     if value then
+--         print("Name " .. name .. " Video length: " .. value .. " seconds " .. current_playlist .. " is the total")
+--     end
+-- end)

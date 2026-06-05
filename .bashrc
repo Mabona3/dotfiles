@@ -65,7 +65,7 @@ done
 eval "$(/bin/starship init bash --print-full-init)"
 
 # kanagawa color
-~/shell/padded_logo ~/shell/logo.txt `echo -e '\e[38;2;195;64;67m'`
+# ~/shell/padded_logo ~/shell/logo.txt `echo -e '\e[38;2;195;64;67m'`
 
 # # rose pine
 # ~/shell/padded_logo ~/shell/logo.txt `echo -e '\e[38;2;49;72;143m'`

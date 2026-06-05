@@ -1,3 +1,5 @@
+@import url("colors.css");
+
 window#waybar {
   background: rgba(0, 0, 0, 0);
   color: white;
@@ -12,28 +14,27 @@ window#waybar {
 /* Workspace Button */
 
 #workspaces {
-  background: rgba(0, 0, 0, 0);
+  background: transparent;
+  color: @foreground;
   margin: 0px 3px
 }
 
 #workspaces button {
-  background: rgba(100, 100, 100, 0.3);
   margin: 0 3px;
-  color: white;
   padding: 3px;
   border-radius: 9999px;
 }
 
-button:hover {
-  border: 1px solid cyan
-}
-
 #workspaces button.focused {
-  border: 1px solid rgba(0, 255, 255, 0.3);
+  border: 1px solid @foreground;
 }
 
 #workspaces button.active {
-  border: 1px solid rgba(0, 255, 255, 0.3);
+  border: 1px solid @foreground;
+}
+
+button:hover {
+  border: 1px solid @color4
 }
 
 #backlight {
@@ -53,6 +54,7 @@ button:hover {
   border-radius: 12px;
 }
 
+#workspaces button,
 #custom-prayer,
 #clock,
 #network,
@@ -73,18 +75,18 @@ button:hover {
 #backlight,
 #temperature,
 #custom-power {
-  padding: 0 8px;
-  background: rgba(100, 100, 100, 0.4);
+  padding: 4px 8px;
+  background: @background;
+  opacity: 0.8;
   margin: 0 3px;
-  color: white;
+  color: @foreground;
   border-radius: 12px;
 }
 
 #temperature.critical,
 #network.disconnected {
-  background-color: rgba(255, 100, 100, 0.8)
+  background-color: @color2
 }
-
 
 /* 
 #custom-power {

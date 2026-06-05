@@ -1,16 +1,28 @@
 #!/bin/bash
 
-new=$HOME/wallpaper/$(ls $HOME/wallpaper | sort -R | head -n 1)
+$1
+if [ $? -ne 0 ]; then
+    new=$(find $HOME/wallpaper -type f | sort -R | head -n 1);
+else
+    new=`find ~/wallpaper/ -type f \( -name "*.jpg" -o -name "*.png" \) | while read -r img; do
+    base=$(basename "$img")
+    echo -en "${base^}\0icon\x1f$img\n"
+    done | rofi -dmenu -case-smart -theme-str '
+    window { width: 30%; }
+    element-icon { size: 3em; }
+    listview { columns: 1; lines: 6; }
+    '`;
+    new=`find ~/wallpaper/ -type f -iname $new`
+fi
 
-hyprctl hyprpaper preload $new
 hyprctl hyprpaper wallpaper "eDP-1,$new"
 
-active_wallpaper=$(hyprctl hyprpaper listactive | tail -n 1 | cut -d " " -f 3)
+prev=$(hyprctl hyprpaper listactive | tail -n 1 | cut -d " " -f 3)
 
-list=$(hyprctl hyprpaper listloaded)
+if [ "$prev" != "$new" ]; then
+    wallust -s run "$new"
+    hyprctl hyprpaper unload "$prev"
+    notify-send "$new" -i "$new"
+    pkill -SIGUSR2 waybar
+fi
 
-for i in $list; do
-    if [ "$i" != "$new" ]; then
-        hyprctl hyprpaper unload "$i"
-    fi
-done

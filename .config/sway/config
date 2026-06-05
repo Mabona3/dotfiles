@@ -8,15 +8,14 @@ set $right l
 
 set $term wezterm
 set $browser zen-browser
-set $menu bemenu-run 
-set $drun_menu j4-dmenu-desktop
-set $drun_menu_flags --dmenu="bemenu -i -p '' --fn 'JetBrains Mono 9' --hf '#c34043' --tf '#c34043' --tb '#000000cc' --fb '#000000cc' --nb '#000000cc' --hb '#000000cc' --sb '#000000cc' -R 6 --hp '3'"
-set $menu_flags --fn 'JetBrains Mono 9' --hf '#c34043' --tf "#c34043" --tb "#000000cc" --fb "#000000cc" --nb "#000000cc" --hb "#000000cc" --sb "#000000cc" -R 6 -p "" --hp "3"
+set $files dolphin
+set $menu wmenu-run 
 
-set $files nautilus
+# set $drun_menu j4-dmenu-desktop
+# set $drun_menu_flags --dmenu="bemenu -i -p '' --fn 'JetBrains Mono 9' --hf '#c34043' --tf '#c34043' --tb '#000000cc' --fb '#000000cc' --nb '#000000cc' --hb '#000000cc' --sb '#000000cc' -R 6 --hp '3'"
+# set $menu_flags --fn 'JetBrains Mono 9' --hf '#c34043' --tf "#c34043" --tb "#000000cc" --fb "#000000cc" --nb "#000000cc" --hb "#000000cc" --sb "#000000cc" -R 6 -p "" --hp "3"
 
 exec swaybg -i $(find ~/wallpaper/ -type f | shuf -n1)
-
 exec swaync
 
 output HDMI-A-1 resolution 1920x1080 position 1920,0
@@ -37,25 +36,27 @@ input type:keyboard {
     xkb_options grp:win_space_toggle
 }
 
-bindsym $mod+Return exec $term
-bindsym $mod+c kill
-bindsym $mod+b exec $browser
-bindsym $mod+d exec (pidof $drun_menu || pidof $menu || $menu $menu_flags)
-bindsym $mod+Shift+d exec (pidof $drun_menu || pidof $menu || $drun_menu $drun_menu_flags)
-bindsym $mod+u exec $files
-bindsym $mod+T exec pidof swaync-client || swaync-client -t
-bindsym $mod+y exec pidof swaync-client || swaync-client --close-all
+    bindsym $mod+Return exec $term
+    bindsym $mod+c kill
+    bindsym $mod+b exec $browser
+    bindsym $mod+d exec $menu
+    # bindsym $mod+d exec (pidof $drun_menu || pidof $menu || $menu $menu_flags)
+    # bindsym $mod+Shift+d exec (pidof $drun_menu || pidof $menu || $drun_menu $drun_menu_flags)
+    bindsym $mod+u exec $files
 
-bindsym $mod+Shift+n exec pkill swaybg && swaybg -i $(find ~/wallpaper/ -type f | shuf -n1)
+    bindsym $mod+T exec pidof swaync-client || swaync-client -t
+    bindsym $mod+y exec pidof swaync-client || swaync-client --close-all
+    
+    bindsym $mod+Shift+n exec ~/.config/sway/background.sh
 
-bindsym $mod+Shift+PAUSE exec swaylock -f -c 000000
-bindsym $mod+Shift+z exec grim -g "$(slurp)"
-bindsym $mod+PRINT exec grim
+    bindsym $mod+Shift+PAUSE exec swaylock -f -c 000000
+    bindsym $mod+Shift+z exec grim -g "$(slurp)"
+    bindsym $mod+PRINT exec grim
 
-floating_modifier $mod normal
+    floating_modifier $mod normal
 
-bindsym $mod+r reload
-bindsym $mod+Shift+q exec swaymsg exit
+    bindsym $mod+r reload
+    bindsym $mod+Shift+q exec swaymsg exit
 
 bindsym $mod+$left  focus left
 bindsym $mod+$down  focus down
@@ -80,7 +81,7 @@ bindsym $mod+Shift+Right  move right
 bindsym $mod+Tab        workspace next
 bindsym $mod+Shift+Tab  workspace prev
 
-bindsym $mod+PAUSE exec playerctl --all-players play-pause
+bindsym $mod+SHIFT+F11 exec playerctl --all-players play-pause
 bindsym PAUSE exec mpd & mpc toggle
 bindsym $mod+F11 exec mpd & mpc toggle
 bindsym $mod+F10 exec mpc prev

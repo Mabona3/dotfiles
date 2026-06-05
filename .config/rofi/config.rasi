@@ -1,6 +1,6 @@
 configuration {
-	modes: "window,drun,run";
-	font: "FiraCodeNerdFont 10";
+	modes: "drun,run,window";
+	font: "FiraCodeNerdFont 14";
 /*	location: 0;*/
 /*	yoffset: 0;*/
 /*	xoffset: 0;*/
@@ -24,9 +24,9 @@ configuration {
 /*	ignored-prefixes: "";*/
 /*	sort: false;*/
 /*	sorting-method: "normal";*/
-/*	case-sensitive: false;*/
+	case-sensitive: false;
 /*	cycle: true;*/
-	sidebar-mode: true;
+    sidebar-mode: false;
 /*	hover-select: false;*/
 /*	eh: 1;*/
 /*	auto-select: false;*/
@@ -149,4 +149,5 @@ configuration {
       sorting-method:    "name";
   }
 }
-@theme "Arc-Dark.rasi"
+
+@theme "Material.rasi"

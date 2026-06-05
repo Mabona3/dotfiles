@@ -17,9 +17,6 @@ return {
                     log_handler = true,
                 },
             },
-            logger = {
-                level = vim.log.levels.INFO,
-            },
             notification = {
                 window = {
                     winblend = 0,
@@ -31,7 +28,7 @@ return {
 
         local cmp = require('cmp')
         local ls = require("luasnip")
-        vim.lsp.set_log_level("off")
+        vim.lsp.log.set_level("warn")
 
         require("luasnip.loaders.from_vscode").lazy_load()
 

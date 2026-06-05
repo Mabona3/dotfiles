@@ -17,8 +17,12 @@ keymap.set("t", "<a-L>", "<c-\\><c-n><c-w>Li");
 
 -- Terminal creation
 keymap.set('n', '<leader>ts', '<cmd>vsp | terminal<cr><cmd>setlocal nobuflisted<CR>i',
-  { noremap = true, silent = true })
+    { noremap = true, silent = true })
 keymap.set('n', '<leader>tS', '<cmd>sp | terminal<cr><cmd>setlocal nobuflisted<CR>i',
-  { noremap = true, silent = true })
+    { noremap = true, silent = true })
 keymap.set('n', '<leader>tc', '<cmd>tabnew | terminal<cr><cmd>setlocal nobuflisted<CR>i',
-  { noremap = true, silent = true })
+    { noremap = true, silent = true })
+keymap.set('n', '<leader>cm', '<cmd>vsp | terminal make<cr>i',
+    { noremap = true, silent = true })
+keymap.set('n', '<leader>cM', '<cmd>vsp | terminal make && make run<cr>i',
+    { noremap = true, silent = true })

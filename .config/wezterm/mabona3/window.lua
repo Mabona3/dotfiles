@@ -1,8 +1,7 @@
 return function(config)
-    config.color_scheme = "deep";
     config.window_decorations = "NONE";
 
-    config.window_background_opacity = 0.7;
+    config.window_background_opacity = 0.9;
     config.window_padding = {
         left = '0cell',
         right = '0cell',
@@ -16,4 +15,5 @@ return function(config)
         border_bottom_height = '0cell',
         border_top_height = '0cell',
     }
+    config.warn_about_missing_glyphs = false
 end

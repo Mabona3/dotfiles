@@ -2,13 +2,15 @@ local wezterm = require('wezterm');
 local act = wezterm.action;
 
 return function(config)
-  config.keys = {
-    { mods = "CTRL|SHIFT", key = "a", action = act.SplitVertical { domain = "CurrentPaneDomain" } },
-    { mods = "CTRL|SHIFT", key = "s", action = act.SplitHorizontal { domain = "CurrentPaneDomain" } },
-    { mods = "CTRL|SHIFT", key = "d", action = act.ShowDebugOverlay },
-    { mods = "CTRL|SHIFT", key = "h", action = act.ActivatePaneDirection("Left") },
-    { mods = "CTRL|SHIFT", key = "j", action = act.ActivatePaneDirection("Down") },
-    { mods = "CTRL|SHIFT", key = "k", action = act.ActivatePaneDirection("Up") },
-    { mods = "CTRL|SHIFT", key = "l", action = act.ActivatePaneDirection("Right") },
-  }
+    config.leader = { key = "k", mods = "ALT", timeout_millisecond = 1000 }
+    config.keys = {
+        { mods = "LEADER", key = "a", action = act.SplitVertical { domain = "CurrentPaneDomain" } },
+        { mods = "LEADER", key = "s", action = act.SplitHorizontal { domain = "CurrentPaneDomain" } },
+        { mods = "LEADER", key = "d", action = act.ShowDebugOverlay },
+        { mods = "LEADER", key = "h", action = act.ActivatePaneDirection("Left") },
+        { mods = "LEADER", key = "j", action = act.ActivatePaneDirection("Down") },
+        { mods = "LEADER", key = "k", action = act.ActivatePaneDirection("Up") },
+        { mods = "LEADER", key = "l", action = act.ActivatePaneDirection("Right") },
+        { mods = "LEADER", key = "c", action = act.SpawnTab("CurrentPaneDomain") },
+    }
 end

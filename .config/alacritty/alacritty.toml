@@ -4,8 +4,8 @@ general.import = [
     "~/.config/alacritty/others.toml",
     "~/.config/alacritty/scrolling.toml",
     "~/.config/alacritty/colors.toml",
-    "~/.config/alacritty/github/github-dark.toml",
+    # "~/.config/alacritty/github/github_dark.toml",
     #"~/.config/alacritty/rose-pine/rose-pine-frappe.toml",
-    # "~/.config/alacritty/kanagawa/kanagawa_dragon.toml",
+    "~/.config/alacritty/kanagawa/kanagawa_dragon.toml",
 ]
 

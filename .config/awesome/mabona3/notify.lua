@@ -7,6 +7,6 @@ naughty.config.presets = {
   }
 }
 
--- naughty.notify({
---   text= "Reloaded Awesome",
--- })
+naughty.notify({
+  text= "Reloaded Awesome",
+})
