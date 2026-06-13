@@ -18,6 +18,7 @@
         "custom/forward",
         "mpd",
         "custom/previous",
+        "keyboard-state",
         "backlight",
         "pulseaudio",
         "battery",

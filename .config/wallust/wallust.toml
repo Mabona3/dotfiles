@@ -25,7 +25,7 @@ color_space = "salience"
 # softlight - softlight16 - softlightcomp - softlightcomp16
 # saliencedark - saliencedarkbalanced - saliencedarkdistributed - saliencedarklow (each has the 16 variations)
 # salienceligh - saliencelightbalanced - saliencelightdistributed - saliencelightlow (each has the 16 variations)
-palette = "saliencedarkbalanced"
+palette = "saliencedarklow"
 
 # Ensures a "readable contrast" (OPTIONAL, disabled by default)
 # Should only be enabled when you notice an unreadable contrast frequently happening

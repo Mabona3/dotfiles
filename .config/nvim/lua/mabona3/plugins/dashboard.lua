@@ -75,37 +75,11 @@ return {
             config = {
                 header = mabona_shadow,
                 center = {
-                    {
-                        icon = '󰊳 ',
-                        desc = 'Update',
-                        group = '@property',
-                        action = 'Lazy update',
-                        key = 'u'
-                    },
-                    {
-                        icon = ' ',
-                        icon_hl = '@variable',
-                        desc = 'Files',
-                        group = 'Label',
-                        action = 'Telescope find_files',
-                        key = 'f',
-                    },
-                    {
-                        icon = " ",
-                        desc = 'Hint',
-                        group = 'DiagnosticHint',
-                        action = 'Telescope diagnostics',
-                        key = 'a',
-                    },
-                    {
-                        icon = " ",
-                        desc = 'grep',
-                        group = 'Number',
-                        action = 'Telescope live_grep',
-                        key = 's',
-                    },
+                    { icon = '󰊳 ', desc = 'Update', group = '@property', action = 'Lazy update', key = 'u' },
+                    { icon = ' ', icon_hl = '@variable', desc = 'Files', group = 'Label', action = 'Telescope find_files', key = 'f', },
+                    { icon = " ", desc = 'Hint', group = 'DiagnosticHint', action = 'Telescope diagnostics', key = 'a', },
+                    { icon = " ", desc = 'grep', group = 'Number', action = 'Telescope live_grep', key = 's', },
                 },
-                footer = {}
             },
         }
     end

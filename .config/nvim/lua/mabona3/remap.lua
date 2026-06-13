@@ -46,12 +46,12 @@ vim.keymap.set("n", "<Tab>", "<cmd>bnext<CR>", { noremap = true, silent = true }
 vim.keymap.set("n", "<S-Tab>", "<cmd>bprevious<CR>", { noremap = true, silent = true })
 
 vim.keymap.set("n", "<leader>qc", "<cmd>bdelete<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>dc", "<cmd>bun<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>xc", "<cmd>bun!<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>qd", "<cmd>bun<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>qx", "<cmd>bun!<CR>", { noremap = true, silent = true })
 
 vim.keymap.set("n", "<leader>qp", "<cmd>bnext<CR><cmd>bdelete #<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>dp", "<cmd>bnext<CR><cmd>bun #<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>xp", "<cmd>bnext<CR><cmd>bun! #<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>qd", "<cmd>bnext<CR><cmd>bun #<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>qx", "<cmd>bnext<CR><cmd>bun! #<CR>", { noremap = true, silent = true })
 
 vim.keymap.set("n", "gs", "<cmd>vsp<cr>", { noremap = true, silent = true })
 vim.keymap.set("n", "gS", "<cmd>sp<cr>", { noremap = true, silent = true })

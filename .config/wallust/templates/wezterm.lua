@@ -16,12 +16,12 @@ return function(config)
         cursor_border = '{{cursor}}',
 
         -- the foreground color of selected text
-        selection_fg = '{{foreground}}',
+        selection_fg = '{{cursor}}',
         -- the background color of selected text
-        selection_bg = '{{cursor}}',
+        selection_bg = '{{color1}}',
 
         -- The color of the scrollbar "thumb"; the portion that represents the current viewport
-        scrollbar_thumb = '{{cursor}}',
+        scrollbar_thumb = '{{foreground}}',
 
         -- The color of the split lines between panes
         split = '{{cursor}}',

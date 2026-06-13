@@ -1,44 +1,44 @@
 return function(config)
     config.colors = {
         -- The default text color
-        foreground = '#5FF3D6',
+        foreground = '#F0ABA4',
         -- The default background color
-        background = '#010504',
+        background = '#030308',
 
         -- Overrides the cell background color when the current cell is occupied by the
         -- cursor and the cursor style is set to Block
-        cursor_bg = '#77AC81',
+        cursor_bg = '#B798AA',
         -- Overrides the text color when the current cell is occupied by the cursor
-        cursor_fg = '#010504',
+        cursor_fg = '#030308',
         -- Specifies the border color of the cursor when the cursor style is set to Block,
         -- or the color of the vertical or horizontal bar when the cursor style is set to
         -- Bar or Underline.
-        cursor_border = '#77AC81',
+        cursor_border = '#B798AA',
 
         -- the foreground color of selected text
-        selection_fg = '#5FF3D6',
+        selection_fg = '#B798AA',
         -- the background color of selected text
-        selection_bg = '#77AC81',
+        selection_bg = '#4B5B50',
 
         -- The color of the scrollbar "thumb"; the portion that represents the current viewport
-        scrollbar_thumb = '#77AC81',
+        scrollbar_thumb = '#F0ABA4',
 
         -- The color of the split lines between panes
-        split = '#77AC81',
+        split = '#B798AA',
 
         ansi = {
-            "#010706", "#3A6860", "#6A5B53", "#647E69", "#1983A1", "#9B7441", "#00BEA3",
-            "#4FE6C9",
+            "#04060C", "#4B5B50", "#826973", "#717881", "#5976A8", "#7E85B1", "#A16A64",
+            "#DB9991",
         },
 
         brights = {
-            "#009E84", "#3A6860", "#6A5B53", "#647E69", "#1983A1", "#9B7441", "#00BEA3",
-            "#9FEADC" },
+            "#9B625C", "#4B5B50", "#826973", "#717881", "#5976A8", "#7E85B1", "#A16A64",
+            "#E5C3C0" },
         tab_bar = {
-            background = "#77AC81",
+            background = "#B798AA",
             active_tab = {
-                bg_color = "#010504",
-                fg_color = "#5FF3D6",
+                bg_color = "#030308",
+                fg_color = "#F0ABA4",
                 intensity = "Normal",
                 underline = "None",
                 italic = false,
@@ -46,13 +46,13 @@ return function(config)
             },
 
             inactive_tab = {
-                bg_color = "#77AC81",
-                fg_color = "#010504",
+                bg_color = "#B798AA",
+                fg_color = "#030308",
             },
 
             inactive_tab_hover = {
-                bg_color = "#77AC81",
-                fg_color = "#5FF3D6",
+                bg_color = "#B798AA",
+                fg_color = "#F0ABA4",
                 italic = true,
             },
         }

@@ -19,9 +19,6 @@ vim.api.nvim_create_autocmd('FileType', {
     callback = function(args)
         local opts = { noremap = true, silent = true }
         local bufnr = args.buf
-        vim.opt.tabstop = 4
-        vim.opt.softtabstop = 4
-        vim.opt.shiftwidth = 4
         vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>cg',
             '<cmd>vs | terminal cmake --log-level=ERROR -B Debug && make --quiet -C Debug && ./Debug/' ..
             vim.fn.fnamemodify(vim.fn.getcwd(), ":t") .. ' || ./Debug/app' ..
@@ -44,6 +41,30 @@ vim.api.nvim_create_autocmd('FileType', {
             opts)
     end
 })
+
+vim.api.nvim_create_autocmd('FileType', {
+    pattern = { "cpp", "c" },
+    callback = function()
+        vim.opt_local.cindent = true
+        vim.opt_local.cinoptions = ":0,l1,g0,N-s"
+    end
+})
+
+-- vim.api.nvim_create_autocmd('FileType', {
+--     pattern = { 'cpp', 'c', 'rust', 'javascript', 'zig' },
+--     callback = function()
+--         vim.treesitter.start()
+--         -- folds, provided by Neovim
+--         vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+--         vim.wo.foldmethod = 'expr'
+--         vim.opt.foldenable = true
+--         vim.opt.foldlevel = 99
+--         vim.opt.foldlevelstart = 99
+--         -- indentation, provided by nvim-treesitter
+--         vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+--     end,
+-- })
+--
 
 vim.api.nvim_create_autocmd("FileType", {
     pattern = { 'javascript', 'typescript', 'javascriptreact', 'typescriptreact' },

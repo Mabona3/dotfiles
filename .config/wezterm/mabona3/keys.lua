@@ -2,7 +2,7 @@ local wezterm = require('wezterm');
 local act = wezterm.action;
 
 return function(config)
-    config.leader = { key = "k", mods = "ALT", timeout_millisecond = 1000 }
+    config.leader = { key = "k", mods = "CTRL", timeout_millisecond = 1000 }
     config.keys = {
         { mods = "LEADER", key = "a", action = act.SplitVertical { domain = "CurrentPaneDomain" } },
         { mods = "LEADER", key = "s", action = act.SplitHorizontal { domain = "CurrentPaneDomain" } },

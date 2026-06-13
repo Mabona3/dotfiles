@@ -15,6 +15,7 @@ function ChangeColorScheme(name)
     vim.api.nvim_set_hl(0, 'TelescopePreviewBorder', { bg = 'none' })
     vim.api.nvim_set_hl(0, 'TelescopeResultsNormal', { bg = 'none' })
     vim.api.nvim_set_hl(0, 'TelescopeResultsBorder', { bg = 'none' })
+    vim.api.nvim_set_hl(0, "DashboardHeader", { fg = "none", bg = "none" })
 end
 
 return {

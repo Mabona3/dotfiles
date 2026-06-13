@@ -17,7 +17,7 @@ return function(config)
     config.font = wezterm.font_with_fallback({
         {
             family = font[3],
-            weight = weight[3],
+            weight = weight[0],
         },
         'Noto Color Emoji',
         "SymbolsNerd",
