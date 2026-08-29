@@ -1,8 +1,28 @@
+local color = require("mabona3.color");
+
 local function setColorScheme()
-    ChangeColorScheme('kanagawa-dragon')
+    local pickers = require('telescope.pickers')
+    local finders = require('telescope.finders')
+    local conf = require('telescope.config').values
+    local actions = require('telescope.actions');
+    local actions_state = require('telescope.actions.state')
+
+    local colors = function(opts)
+        opts = opts or {}
+        pickers.new(opts, {
+            prompt_title = "colors",
+            finder = finders.new_table {
+                results = { "kanagawa-dragon", "neon", "orng" }
+            },
+            sorter = conf.generic_sorter(opts),
+        }):find()
+    end
+
+    -- to execute the function
+    ChangeColorScheme(colors(require('telescope.themes').get_dropdown {}))
 end
 
-function ChangeColorScheme(name)
+function InitColorScheme(name)
     vim.cmd.colorscheme(name)
     vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
     vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
@@ -16,6 +36,11 @@ function ChangeColorScheme(name)
     vim.api.nvim_set_hl(0, 'TelescopeResultsNormal', { bg = 'none' })
     vim.api.nvim_set_hl(0, 'TelescopeResultsBorder', { bg = 'none' })
     vim.api.nvim_set_hl(0, "DashboardHeader", { fg = "none", bg = "none" })
+end
+
+function ChangeColorScheme(name)
+    InitColorScheme(name);
+    vim.fn.writefile("return '" .. name .. "';", vim.fn.stdpath("config") .. "/lua/mabona3/color.lua");
 end
 
 return {
@@ -34,7 +59,8 @@ return {
                 dimInactive = true,
                 globalStatus = true,
             })
-            setColorScheme()
+            vim.keymap.set("n", "<leader>pn", setColorScheme);
+            InitColorScheme(color);
         end
 
 

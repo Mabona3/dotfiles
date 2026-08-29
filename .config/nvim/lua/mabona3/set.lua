@@ -10,6 +10,7 @@ vim.opt.expandtab = true
 vim.opt.autoindent = true
 vim.opt.smarttab = true
 vim.opt.smartindent = false
+vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.updatetime = 300
 
@@ -36,7 +37,7 @@ vim.g.maplocalleader = "\\"
 
 -- vim.g.netrw_keepdir = 0
 vim.g.netrw_banner = 0
-vim.g.netrw_liststyle = 3
+-- vim.g.netrw_liststyle = 3
 vim.g.netrw_browse_split = 0
 vim.g.netrw_altv = 1
 

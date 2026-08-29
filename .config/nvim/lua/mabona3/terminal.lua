@@ -22,7 +22,7 @@ keymap.set('n', '<leader>tS', '<cmd>sp | terminal<cr><cmd>setlocal nobuflisted<C
     { noremap = true, silent = true })
 keymap.set('n', '<leader>tc', '<cmd>tabnew | terminal<cr><cmd>setlocal nobuflisted<CR>i',
     { noremap = true, silent = true })
-keymap.set('n', '<leader>cm', '<cmd>vsp | terminal make<cr>i',
+keymap.set('n', '<leader>cm', '<cmd>vsp | terminal make --quiet<cr>i',
     { noremap = true, silent = true })
-keymap.set('n', '<leader>cM', '<cmd>vsp | terminal make && make run<cr>i',
+keymap.set('n', '<leader>cM', '<cmd>vsp | terminal make --quiet&& make --quiet run<cr>i',
     { noremap = true, silent = true })

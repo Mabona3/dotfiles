@@ -1,7 +1,6 @@
 #!/bin/bash
 
-$1
-if [ $? -ne 0 ]; then
+if [ "$#" -eq 1 ]; then
     new=$(find $HOME/wallpaper -type f | sort -R | head -n 1);
 else
     new=`find ~/wallpaper/ -type f \( -name "*.jpg" -o -name "*.png" \) | while read -r img; do
@@ -15,9 +14,18 @@ else
     new=`find ~/wallpaper/ -type f -iname $new`
 fi
 
-hyprctl hyprpaper wallpaper "eDP-1,$new"
+if [[ -z $new ]]; then
+    echo $new;
+    return
+fi
 
-prev=$(hyprctl hyprpaper listactive | tail -n 1 | cut -d " " -f 3)
+prev=$(hyprctl hyprpaper listactive | tail -n 1 | cut -d " " -f 2)
+monitors=$(hyprctl hyprpaper listactive | cut -d ":" -f 1)
+
+echo $monitors
+for monitor in $monitors; do 
+    hyprctl hyprpaper wallpaper "$monitor,$new"
+done
 
 if [ "$prev" != "$new" ]; then
     wallust -s run "$new"

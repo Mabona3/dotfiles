@@ -1,6 +1,6 @@
 -- Set programs that you use
 local terminal    = "wezterm"
-local fileManager = "dolphin"
+local fileManager = "pcmanfm"
 -- local menu        = "wmenu-run"
 local menu        = "rofi"
 local browser     = "zen-browser"
@@ -21,7 +21,7 @@ hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd("pidof " .. menu .. " || " .. menu .. " -show drun"))
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ action = "toggle" }))
 hl.bind(mainMod .. " + SHIFT + D",
-    hl.dsp.exec_cmd(terminal .. " -e nvim '+cd ~/Documents/md/tasks' ~/Documents/md/tasks"))
+    hl.dsp.exec_cmd(terminal .. " -e nvim '+cd ~/Documents/md/tasks' ~/Documents/md/tasks/main.md"))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + PAUSE", hl.dsp.exec_cmd("hyprlock"))

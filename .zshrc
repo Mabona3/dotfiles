@@ -24,7 +24,7 @@ alias vim='nvim'
 alias glog="git --no-pager log --decorate --graph --pretty=format:'%C(auto)%h %d %s %C(green)(%cr) %C(blue)[%an <%ae>]'"
 
 playlist_time() {
-for f in *.mp4; do
+for f in *.(mp4|mkv|webm); do
   ffprobe -v error -show_entries format=duration \
   -of default=nw=1:nk=1 "$f"
 done | awk '{s+=$1} END {printf "%02d:%02d:%02d\n",s/3600,(s%3600)/60,s%60}'
@@ -41,21 +41,8 @@ PERL_MM_OPT="INSTALL_BASE=/home/mabona3/perl5"; export PERL_MM_OPT;
 
 eval "$(/bin/starship init zsh)"
 
-# kanagawa color
-# ~/shell/padded_logo ~/shell/logo.txt `echo -e '\e[38;2;195;64;67m'`
-
-# # rose pine
+# without any additions
+~/shell/padded_logo
 # ~/shell/padded_logo ~/shell/logo.txt `echo -e '\e[38;2;49;72;143m'`
-
-# purple
-# ~/shell/padded_logo ~/shell/logo.txt `echo -e '\e[38;2;211;138;234m'`
-
-# neon
-# ~/shell/padded_logo ~/shell/logo.txt `echo -e '\e[38;2;31;166;141m'`
-
-~/shell/padded_logo ~/shell/logo.txt
-
-# nord
-# ~/shell/padded_logo ~/shell/logo.txt `echo -e '\e[38;2;129;161;193m'`
 
 # tput sgr0

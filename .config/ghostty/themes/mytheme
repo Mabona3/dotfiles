@@ -1,0 +1,52 @@
+# background = #141218
+# foreground = #e6e0e9
+# cursor-color = #d0bcff
+# selection-background = #4f378b
+# selection-foreground = #e6e0e9
+#
+# palette = 0=#141218
+# palette = 1=#ff728f
+# palette = 2=#7fff9a
+# palette = 3=#ffda72
+# palette = 4=#bca5f2
+# palette = 5=#4e3d76
+# palette = 6=#D0BCFF
+# palette = 7=#f4efff
+# palette = 8=#9d99a5
+# palette = 9=#ff9fb2
+# palette = 10=#a5ffb8
+# palette = 11=#ffe7a5
+# palette = 12=#d7c6ff
+# palette = 13=#ded0ff
+# palette = 14=#e9e0ff
+# palette = 15=#faf8ff
+
+
+# kanagawa dragon
+palette = 0=#020c0c
+palette = 1=#c4746e
+palette = 2=#8a9a7b
+palette = 3=#c4b28a
+palette = 4=#8ba4b0
+palette = 5=#a292a3
+palette = 6=#8ea4a2
+palette = 7=#c8c093
+# palette = 7=#ffffff
+palette = 8=#a6a69c
+palette = 9=#e46876
+palette = 10=#87a987
+palette = 11=#e6c384
+palette = 12=#7fb4ca
+palette = 13=#938aa9
+palette = 14=#7aa89f
+palette = 15=#c5c9c5
+# palette = 15=#ffffff
+
+background = #000000
+# foreground = #ffffff
+foreground = #c5c9c5
+
+# cursor-color = c8c093
+cursor-color = #c5c9c5
+selection-background = #2d4f67
+selection-foreground = #ffffff

@@ -18,15 +18,33 @@
         "custom/forward",
         "mpd",
         "custom/previous",
-        "keyboard-state",
+        // "keyboard-state",
         "backlight",
         "pulseaudio",
         "battery",
         "temperature",
         "network",
         "cpu"
-//        "custom/power"
+       // "custom/power"
     ],
+    "wlr/workspaces": {
+	    "format": "{name}: {icon}",
+	    "format-icons": {
+	    	"1": "",
+	    	"2": "",
+	    	"3": "",
+	    	"4": "",
+	    	"5": "",
+	    	"active": "",
+	    	"default": ""
+	    },
+	    "sort-by-number": true
+    },
+    "keyboard-state": {
+        "numlock": true,
+        "capslock": true,
+        "format": "{name}"
+    },
     "sway/window": {
         "icon": true
     },
@@ -34,10 +52,10 @@
         "icon": true
     },
     "hyprland/workspaces": {
-        "disable-scroll": true,
-        "all-outputs": true,
-        "warp-on-scroll": false,
         "format": "{name}"
+    //     "disable-scroll": true,
+    //     "all-outputs": true,
+    //     "warp-on-scroll": false,
     },
     "custom/forward": {
         "exec": "echo  ",
@@ -59,7 +77,7 @@
     },
     "mpd": {
         // "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
-        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}",
+        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon} {artist} - {title}",
         "tooltip-format": "{title} ({elapsedTime:%H:%M:%S}/{totalTime:%H:%M:%S})",
         "format-disconnected": "Disconnected ",
         "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
@@ -67,10 +85,11 @@
         "interval": 5,
         "on-click": "mpc toggle",
         "consume-icons": {
+            "off": "<span color=\"#f53c3c\"> </span>",
             "on": " "
         },
         "random-icons": {
-            "off": "<span color=\"#f53c3c\"></span> ",
+            "off": "<span color=\"#f53c3c\"> </span>",
             "on": " "
         },
         "repeat-icons": {
@@ -166,9 +185,9 @@
     },
     "network": {
         "format-wifi": " ",
-        "format-ethernet": " ",
-        "tooltip-format": "{ipaddr} via {essid} ",
-        "format-linked": "{ifname} (No IP) ",
+        "format-ethernet": " ",
+        "tooltip-format": "{ipaddr} via {essid}",
+        "format-linked": "{ifname} (No IP)",
         "format-disconnected": "󰖪 "
     },
     "pulseaudio": {
@@ -218,6 +237,6 @@
         "tooltip": true,
         "exec": "cat /tmp/prayer-notify.json",
         "return-type": "json",
-        "interval": 1
+        "interval": 5
     }
 }

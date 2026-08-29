@@ -14,29 +14,62 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end
 })
 
-vim.api.nvim_create_autocmd('FileType', {
-    pattern = { "cpp", "c", "cmake", "qml" },
+-- This is much better but I can read it to know the project name although that is the next step
+vim.api.nvim_create_autocmd('VimEnter', {
     callback = function(args)
+        if vim.uv.fs_stat(vim.uv.cwd() .. "/CMakeLists.txt") == nil then
+            return;
+        end
         local opts = { noremap = true, silent = true }
         local bufnr = args.buf
+
         vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>cg',
-            '<cmd>vs | terminal cmake --log-level=ERROR -B Debug && make --quiet -C Debug && ./Debug/' ..
+            '<cmd>vs | terminal cmake --log-level=ERROR -B Debug && make -C Debug && ./Debug/' ..
             vim.fn.fnamemodify(vim.fn.getcwd(), ":t") .. ' || ./Debug/app' ..
             vim.fn.fnamemodify(vim.fn.getcwd(), ":t") .. '<cr>i', opts)
 
         vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>cG',
             '<cmd>vs | terminal cmake --log-level=ERROR -DCMAKE_EXPORT_COMPILE_COMMANDS=YES -B Debug &&\
-            ln -s Debug/compile_commands.json . > /dev/null 2>&1 && make --quiet -C Debug && ./Debug/' ..
+            ln -s Debug/compile_commands.json . > /dev/null 2>&1 && make -C Debug && ./Debug/' ..
             vim.fn.fnamemodify(vim.fn.getcwd(), ":t") .. ' || ./Debug/app' ..
             vim.fn.fnamemodify(vim.fn.getcwd(), ":t") .. '<cr>i', opts)
 
         vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>cr',
-            '<cmd>vs | terminal make --quiet -C Debug && ./Debug/' ..
+            '<cmd>vs | terminal make -C Debug && ./Debug/' ..
             vim.fn.fnamemodify(vim.fn.getcwd(), ":t") .. ' || ./Debug/app' ..
             vim.fn.fnamemodify(vim.fn.getcwd(), ":t") .. '<cr>i',
             opts)
         vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>cd',
-            '<cmd>vs | terminal make --quiet -C Debug && gdb ./Debug/' ..
+            '<cmd>vs | terminal make -C Debug && gdb ./Debug/' ..
+            vim.fn.fnamemodify(vim.fn.getcwd(), ":t") .. '<cr>i',
+            opts)
+    end
+});
+
+vim.api.nvim_create_autocmd('FileType', {
+    pattern = { "cpp", "c", "cmake", "qml" },
+    callback = function(args)
+        local opts = { noremap = true, silent = true }
+        local bufnr = args.buf
+
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>cg',
+            '<cmd>vs | terminal cmake --log-level=ERROR -B Debug && make -C Debug && ./Debug/' ..
+            vim.fn.fnamemodify(vim.fn.getcwd(), ":t") .. ' || ./Debug/app' ..
+            vim.fn.fnamemodify(vim.fn.getcwd(), ":t") .. '<cr>i', opts)
+
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>cG',
+            '<cmd>vs | terminal cmake --log-level=ERROR -DCMAKE_EXPORT_COMPILE_COMMANDS=YES -B Debug &&\
+            ln -s Debug/compile_commands.json . > /dev/null 2>&1 && make -C Debug && ./Debug/' ..
+            vim.fn.fnamemodify(vim.fn.getcwd(), ":t") .. ' || ./Debug/app' ..
+            vim.fn.fnamemodify(vim.fn.getcwd(), ":t") .. '<cr>i', opts)
+
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>cr',
+            '<cmd>vs | terminal make -C Debug && ./Debug/' ..
+            vim.fn.fnamemodify(vim.fn.getcwd(), ":t") .. ' || ./Debug/app' ..
+            vim.fn.fnamemodify(vim.fn.getcwd(), ":t") .. '<cr>i',
+            opts)
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>cd',
+            '<cmd>vs | terminal make -C Debug && gdb ./Debug/' ..
             vim.fn.fnamemodify(vim.fn.getcwd(), ":t") .. '<cr>i',
             opts)
     end
@@ -73,7 +106,7 @@ vim.api.nvim_create_autocmd("FileType", {
         local bufnr = args.buf
 
         vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>cr', '<cmd>vs | terminal npm run dev<cr>i', opts)
-        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>cg', '<cmd>vs | terminal node %<cr>i', opts)
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>cR', '<cmd>vs | terminal node %<cr>i', opts)
     end
 })
 
@@ -82,8 +115,8 @@ vim.api.nvim_create_autocmd("FileType", {
     callback = function(args)
         local opts = { noremap = true, silent = true }
         local bufnr = args.buf
-        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>cG', '<cmd>vs | terminal love .<cr>i', opts)
-        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>cg', '<cmd>vs | terminal lua .<cr>i', opts)
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>cR', '<cmd>vs | terminal love .<cr>i', opts)
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>cr', '<cmd>vs | terminal lua .<cr>i', opts)
     end
 })
 
@@ -93,7 +126,7 @@ vim.api.nvim_create_autocmd("FileType", {
         local opts = { noremap = true, silent = true }
         local bufnr = args.buf
 
-        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>cg', '<cmd>vs | terminal go build ./...<cr>i', opts)
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>cb', '<cmd>vs | terminal go build ./...<cr>i', opts)
         vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>cr', '<cmd>vs | terminal go run ./...<cr>i', opts)
     end,
 })
@@ -115,7 +148,8 @@ vim.api.nvim_create_autocmd("FileType", {
         local opts = { noremap = true, silent = true }
         local bufnr = args.buf
         vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>cb', '<cmd>vs | terminal cargo build<cr>i', opts)
-        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>cr', '<cmd>vs | terminal cargo run<cr>i', opts)
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>cr', '<cmd>vs | terminal cargo run --quiet<cr>i', opts)
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>cR', '<cmd>vs | terminal cargo run --quiet<cr>i', opts)
     end,
 })
 
