@@ -104,4 +104,7 @@ return {
             })
         end
     },
+    {
+        'daschw/leaf.nvim'
+    }
 }

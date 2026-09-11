@@ -20,6 +20,11 @@ keymap.set("i", '<c-f>', '<right>')
 keymap.set("n", '<c-u>', '<c-u>zz');
 keymap.set("n", '<c-d>', '<c-d>zz');
 
+keymap.set({ "n", "v" }, "[[", "[[zz");
+keymap.set({ "n", "v" }, "][", "][zz");
+keymap.set({ "n", "v" }, "[]", "[]zz");
+keymap.set({ "n", "v" }, "]]", "]]zz");
+
 keymap.set({ "n", "v" }, "<a-h>", "<c-w>h");
 keymap.set({ "n", "v" }, "<a-j>", "<c-w>j");
 keymap.set({ "n", "v" }, "<a-k>", "<c-w>k");

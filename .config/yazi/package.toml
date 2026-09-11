@@ -1,19 +1,14 @@
 [[plugin.deps]]
 use = "yazi-rs/plugins:no-status"
-rev = "5d5c480"
+rev = "c591a36"
 hash = "3e023d31f29201efdac2a6ae35fedb78"
 
 [[plugin.deps]]
 use = "boydaihungst/mediainfo"
-rev = "aa4804b"
-hash = "1b47789a83ad34a2911293fc2e036a27"
+rev = "73a3658"
+hash = "22d1a0b62204808b670771468f09c400"
 
 [[flavor.deps]]
 use = "marcosvnmelo/kanagawa-dragon"
-rev = "b9541e8"
-hash = "dc840cf225dbf6f0257617403ad43d8b"
-
-[[flavor.deps]]
-use = "stepbrobd/nord"
-rev = "891f0b3"
-hash = ""
+rev = "b433f4a"
+hash = "b967c24a30350b1c5cd3a2ad5a7732e7"
