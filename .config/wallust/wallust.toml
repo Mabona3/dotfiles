@@ -46,6 +46,7 @@ check_contrast = true
 [templates]
 waybar = { src = "waybar.css", dst = "~/.config/waybar/colors.css" }
 wezterm = { src = "wezterm.lua", dst = "~/.config/wezterm/mabona3/color.lua" }
+hyprland = { src = "hyprland.lua", dst = "~/.config/hypr/hyprland/color.lua" }
 # ghostty = { src = "ghostty", dst = "~/.config/ghostty/themes/ghostty" }
 
 [hooks]

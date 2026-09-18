@@ -1,5 +1,3 @@
 let colors = {
-    backgroundColor: "transparent",
+  backgroundColor: "transparent",
 };
-
-export default colors;

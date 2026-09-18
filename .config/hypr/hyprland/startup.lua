@@ -5,7 +5,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("hyprpaper")
     hl.exec_cmd("hypridle")
     hl.exec_cmd("swaync")
-    hl.exec_cmd("wallust -s run /home/mabona/wallpaper/anime/dead-pool-venom.jpg")
+    hl.exec_cmd("wallust -s run /home/mabona/wallpaper/anime/shinigami.jpg")
 end)
 
 

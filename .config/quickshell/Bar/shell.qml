@@ -14,7 +14,7 @@ PanelWindow {
     }
 
     implicitHeight: 40
-    color: Theme.backgroundColor
+    color: Theme.colors.backgroundColor
 
     Poller {
         id: clock

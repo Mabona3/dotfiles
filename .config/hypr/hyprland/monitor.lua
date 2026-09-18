@@ -1,4 +1,7 @@
 -- See https://wiki.hypr.land/Configuring/Basics/Monitors/
+
+local colors = require("hyprland.colors")
+
 hl.monitor({
     output   = "",
     mode     = "preferred",
@@ -13,8 +16,8 @@ hl.config({
         gaps_out         = 0,
         border_size      = 1,
         col              = {
-            active_border   = { colors = { "rgba(4A0920ee)", "rgba(130d17ee)" }, angle = 45 },
-            inactive_border = "rgba(595959aa)",
+            active_border   = { colors = { colors.cursor, colors.background}, angle = 45 },
+            inactive_border = colors.foreground,
         },
 
         -- Set to true to enable resizing windows by clicking and dragging on borders and gaps
