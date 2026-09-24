@@ -1,5 +1,5 @@
 return {
-    cursor = "{{cursor}}",
+    cursor = "{{cursor}}AA",
     background = "{{background}}",
-    foreground = "{{foreground}}"
+    foreground = "{{foreground}}88"
 }

@@ -4,25 +4,25 @@ import QtQuick
 import QtQuick.Layouts
 
 Rectangle {
-    implicitWidth: row.implicitWidth + 22
-    implicitHeight: 30
+    implicitWidth: row.implicitWidth + 20
+    implicitHeight: 25
     radius: height / 2
-    color: "#000"
+    color: "#000000"
 
     RowLayout {
         id: row
         anchors.centerIn: parent
-        spacing: 8
+        spacing: 6
 
         Repeater {
             model: Hyprland.workspaces
 
             Rectangle {
-                implicitWidth: 20
+                implicitWidth: 24
                 implicitHeight: implicitWidth
                 radius: width / 2
                 border.width: 0.5
-                border.color: modelData.active ? "#3df" : "#888"
+                border.color: modelData.active ? "#3fe" : "#888"
                 color: "#000"
                 opacity: 0.8
 

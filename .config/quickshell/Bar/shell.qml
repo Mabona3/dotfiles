@@ -2,7 +2,6 @@ import Quickshell
 import QtQuick
 import QtQuick.Layouts
 import Quickshell.Services.Mpris
-import "theme.js" as Theme
 
 PanelWindow {
     id: bar
@@ -13,8 +12,8 @@ PanelWindow {
         right: true
     }
 
-    implicitHeight: 40
-    color: Theme.colors.backgroundColor
+    implicitHeight: 28
+    color: "transparent"
 
     Poller {
         id: clock
@@ -41,24 +40,25 @@ PanelWindow {
     }
 
     Poller {
+        id: prayer
+        command: "cat /tmp/prayer-notify.json | jq '.text' -r"
+        interval: 1000
+    }
+
+    Poller {
         id: net
         command: "NO_COLOR=1 nmcli -t -f NAME connection show --active | head -n1"
         interval: 5000
     }
 
-    readonly property var player: Mpris.players.values.find(p => p.isPlaying) ?? Mpris.players.values[0] ?? null
+    property int current_player: 0
+    readonly property var player: Mpris.players.values.find(p => p.isPlaying) ?? Mpris.players.values[current_player] ?? null
 
     RowLayout {
         anchors {
             left: parent.left
             verticalCenter: parent.verticalCenter
-            rightMargin: 14
-        }
-
-        Pill {
-            icon: "music_note"
-            maxLabelWidth: 200
-            label: bar.player ? `${bar.player.trackArtist || "unknown"} -- ${bar.player.trackTitle || ""}` : "Nothing"
+            leftMargin: 8
         }
 
         Pill {
@@ -66,6 +66,13 @@ PanelWindow {
             label: clock.value + ""
             iconColor: "#888"
         }
+
+        Pill {
+            icon: "mosque"
+            label: prayer.value + ""
+            iconColor: "#888"
+        }
+
         HyprlandWindows {}
     }
 
@@ -80,6 +87,26 @@ PanelWindow {
             rightMargin: 14
         }
         spacing: 8
+
+        Pill {
+            icon: "music_note"
+            maxLabelWidth: 200
+            label: bar.player ? `${bar.player.trackArtist || "unknown"} -- ${bar.player.trackTitle || ""}` : "Nothing"
+            MouseArea {
+                anchors.fill: parent
+
+                onClicked: {
+                    if (bar.player.isPlaying) {
+                        bar.player.pause();
+                    } else {
+                        bar.player.play();
+                    }
+                }
+                onDoubleClicked: {
+                    bar.current_player = (bar.current_player + 1) % (Mpris.players?.values?.length ?? 1);
+                }
+            }
+        }
 
         Pill {
             icon: "volume_up"

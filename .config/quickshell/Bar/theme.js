@@ -1,3 +1,7 @@
 let colors = {
-  backgroundColor: "transparent",
+    backgroundColor: "transparent",
+    activeColor: "#3df",
+    inActiveColor: "#888",
+    PillColor: "#000",
+    fontSize = 10,
 };

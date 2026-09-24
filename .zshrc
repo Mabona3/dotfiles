@@ -24,7 +24,7 @@ alias vim='nvim'
 alias glog="git --no-pager log --decorate --graph --pretty=format:'%C(auto)%h %d %s %C(green)(%cr) %C(blue)[%an <%ae>]'"
 
 playlist_time() {
-    for f in *.(mp4|mkv|webm); do
+    for f in */*.(mp4|mkv|webm); do
         ffprobe -v error -show_entries format=duration \
             -of default=nw=1:nk=1 "$f"
     done | awk '{s+=$1} END {printf "%02d:%02d:%02d\n",s/3600,(s%3600)/60,s%60}'
