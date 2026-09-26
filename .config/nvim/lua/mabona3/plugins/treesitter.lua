@@ -1,6 +1,6 @@
 return {
-    'neovim-treesitter/nvim-treesitter',
-    dependencies = { 'neovim-treesitter/treesitter-parser-registry' },
+    'nvim-treesitter/nvim-treesitter',
+    build = ":TSUpdate",
     config = function()
         require 'nvim-treesitter'.setup {
             indent = {

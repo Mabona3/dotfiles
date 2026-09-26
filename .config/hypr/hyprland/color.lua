@@ -1,5 +1,5 @@
 return {
-    cursor = "#A1A3CAAA",
+    cursor = "#BFA7DFAA",
     background = "#030308",
-    foreground = "#CACAFF88"
+    foreground = "#FFABC588"
 }

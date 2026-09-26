@@ -11,12 +11,15 @@ else
     element-icon { size: 3em; }
     listview { columns: 1; lines: 6; }
     '`;
+    if [[ -z $new ]]; then
+        exit
+    fi
     new=`find ~/wallpaper/ -type f -iname $new`
 fi
 
 if [[ -z $new ]]; then
     echo $new;
-    return
+    exit
 fi
 
 prev=$(hyprctl hyprpaper listactive | tail -n 1 | cut -d " " -f 2)

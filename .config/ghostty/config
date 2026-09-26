@@ -4,7 +4,7 @@ background-opacity = 0.7
 fullscreen = true
 window-decoration = false
 title = "Ghostty"
-command = "tmux attach-session -t default >/dev/null 2>&1 || tmux new-session -s default "
+# command = "tmux attach-session -t default >/dev/null 2>&1 || tmux new-session -s default "
 
 # background-blur-radius = 20
 
@@ -17,7 +17,7 @@ cursor-style-blink = false
 # cursor-style = block
 
 # theme
-theme = "ghostty"
+# theme = "ghostty"
 
 # notifications
 confirm-close-surface = false

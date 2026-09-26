@@ -39,11 +39,12 @@ return {
             vim.keymap.set('n', '<leader>pd', builtin.diagnostics)
             vim.keymap.set('n', '<leader>pb', builtin.buffers)
             vim.keymap.set('n', '<leader>pf', builtin.find_files)
-            vim.keymap.set('n', '<leader>pF', function()
+            vim.keymap.set('n', '<leader>pm', function()
                 builtin.find_files {
                     path_display = { shorten = 1 },
                 }
             end)
+
             vim.keymap.set('n', '<leader>ph', builtin.help_tags)
             vim.keymap.set('n', '<C-p>', builtin.git_files)
             vim.keymap.set('n', '<leader>ps', builtin.live_grep)

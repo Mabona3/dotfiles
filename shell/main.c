@@ -11,7 +11,8 @@
 #define BUFFER_SIZE 1024
 wchar_t buffer[BUFFER_SIZE];
 
-int get_terminal_width() {
+int get_terminal_width()
+{
     struct winsize win_size;
     int x = ioctl(STDOUT_FILENO, TIOCGWINSZ, &win_size);
     if (x == -1) {
@@ -21,7 +22,8 @@ int get_terminal_width() {
     return win_size.ws_col;
 }
 
-int main(int argc, char *argv[]) {
+int main(int argc, char *argv[])
+{
     int terminal_width = get_terminal_width();
     if (terminal_width == -1) {
         fprintf(stderr, "Error opening the file: %s", strerror(errno));
@@ -40,10 +42,11 @@ int main(int argc, char *argv[]) {
     else
         file = fopen("/home/mabona/dotfiles/shell/logo_sm.txt", "r");
 
-    if (file == NULL) {
+    if (!file) {
         fprintf(stderr, "Error opening the file: %s", strerror(errno));
         return EXIT_FAILURE;
     }
+
     setlocale(LC_ALL, "");
 
     while (fgetws(buffer, BUFFER_SIZE, file) != NULL) {

@@ -1,7 +1,7 @@
 return function(config)
     config.colors = {
         -- The default text color
-        foreground = '{{foreground}}',
+        -- foreground = '{{foreground}}',
         -- The default background color
         background = '{{background}}',
 

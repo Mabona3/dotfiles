@@ -24,12 +24,24 @@ vim.api.nvim_create_autocmd('VimEnter', {
         local bufnr = args.buf
 
         vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>cg',
-            '<cmd>vs | terminal cmake --log-level=ERROR -B Debug && make -C Debug && ./Debug/' ..
+            '<cmd>vs | terminal cmake --log-level=ERROR -DCMAKE_BUILD_TYPE=Debug -B Debug && make -C Debug && ./Debug/' ..
             vim.fn.fnamemodify(vim.fn.getcwd(), ":t") .. ' || ./Debug/app' ..
             vim.fn.fnamemodify(vim.fn.getcwd(), ":t") .. '<cr>i', opts)
 
         vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>cG',
-            '<cmd>vs | terminal cmake --log-level=ERROR -DCMAKE_EXPORT_COMPILE_COMMANDS=YES -B Debug &&\
+            '<cmd>vs | terminal cmake --log-level=ERROR -DCMAKE_EXPORT_COMPILE_COMMANDS=YES -DCMAKE_BUILD_TYPE=Debug -B Debug &&\
+            ln -s Debug/compile_commands.json . > /dev/null 2>&1 && make -C Debug && ./Debug/' ..
+            vim.fn.fnamemodify(vim.fn.getcwd(), ":t") .. ' || ./Debug/app' ..
+            vim.fn.fnamemodify(vim.fn.getcwd(), ":t") .. '<cr>i', opts)
+
+
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>cb',
+            '<cmd>vs | terminal cmake -DCMAKE_BUILD_TYPE=Release --log-level=ERROR -B Debug && make -C Debug && ./Debug/' ..
+            vim.fn.fnamemodify(vim.fn.getcwd(), ":t") .. ' || ./Debug/app' ..
+            vim.fn.fnamemodify(vim.fn.getcwd(), ":t") .. '<cr>i', opts)
+
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>cB',
+            '<cmd>vs | terminal cmake --log-level=ERROR -DCMAKE_EXPORT_COMPILE_COMMANDS=YES -DCMAKE_BUILD_TYPE=Release -B Debug &&\
             ln -s Debug/compile_commands.json . > /dev/null 2>&1 && make -C Debug && ./Debug/' ..
             vim.fn.fnamemodify(vim.fn.getcwd(), ":t") .. ' || ./Debug/app' ..
             vim.fn.fnamemodify(vim.fn.getcwd(), ":t") .. '<cr>i', opts)

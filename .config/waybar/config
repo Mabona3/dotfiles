@@ -6,13 +6,13 @@
     "modules-left": [
         "clock",
         "custom/prayer",
-        "hyprland/window"
-        // "sway/mode",
-        // "sway/window"
+        // "hyprland/window"
+        "sway/mode",
+        "sway/window"
     ],
     "modules-center": [
-        // "sway/workspaces"
-        "hyprland/workspaces"
+        "sway/workspaces"
+        // "hyprland/workspaces"
     ],
     "modules-right": [
         "custom/forward",
@@ -77,7 +77,7 @@
     },
     "mpd": {
         // "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
-        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon} {artist} - {title}",
+        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}",
         "tooltip-format": "{title} ({elapsedTime:%H:%M:%S}/{totalTime:%H:%M:%S})",
         "format-disconnected": "Disconnected ",
         "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
@@ -237,6 +237,6 @@
         "tooltip": true,
         "exec": "cat /tmp/prayer-notify.json",
         "return-type": "json",
-        "interval": 5
+        "interval": 1000
     }
 }
