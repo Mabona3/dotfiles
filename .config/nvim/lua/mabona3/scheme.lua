@@ -29,7 +29,7 @@ return function(opts)
     local lazy = package.loaded["lazy.core.util"]
     if lazy and lazy.get_unloaded_rtp then
         local paths = lazy.get_unloaded_rtp ""
-        local all_files = vim.fn.globpath(table.concat(paths, ","), "colors/*", 1, 1)
+        local all_files = vim.fn.globpath(table.concat(paths, ","), "colors/*", true, true)
         for _, f in ipairs(all_files) do
             local color = vim.fn.fnamemodify(f, ":t:r")
             if not vim.tbl_contains(colors, color) then
@@ -91,9 +91,9 @@ return function(opts)
                 need_restore = false
                 actions.close(prompt_bufnr)
                 if opts.func then
-                    opts.func(selection.value);
                 else
                     vim.cmd.colorscheme(selection.value);
+                    opts.func(selection.value);
                 end
             end)
             return true

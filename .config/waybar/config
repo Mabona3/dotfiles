@@ -237,6 +237,6 @@
         "tooltip": true,
         "exec": "cat /tmp/prayer-notify.json",
         "return-type": "json",
-        "interval": 1000
+        "interval": 1
     }
 }

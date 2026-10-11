@@ -36,7 +36,18 @@ return {
                 }
             end)
 
-            vim.keymap.set('n', '<leader>pd', builtin.diagnostics)
+            vim.keymap.set('n', '<leader>pcf', builtin.current_buffer_fuzzy_find)
+            vim.keymap.set('n', '<leader>pad', function()
+                builtin.diagnostics(
+                    require("telescope.themes").get_dropdown { previewer = false }
+                )
+            end)
+            vim.keymap.set('n', '<leader>pcd', function()
+                builtin.diagnostics_args = {
+                    root_dir = vim.uv.cwd() .. "/" .. vim.fn.expand("%")
+                };
+                builtin.diagnostics(builtin.diagnostics_args);
+            end)
             vim.keymap.set('n', '<leader>pb', builtin.buffers)
             vim.keymap.set('n', '<leader>pf', builtin.find_files)
             vim.keymap.set('n', '<leader>pm', function()
@@ -46,7 +57,6 @@ return {
             end)
 
             vim.keymap.set('n', '<leader>ph', builtin.help_tags)
-            vim.keymap.set('n', '<C-p>', builtin.git_files)
             vim.keymap.set('n', '<leader>ps', builtin.live_grep)
             vim.keymap.set('n', '<leader>pWs', function()
                 local word = vim.fn.expand("<cWORD>")

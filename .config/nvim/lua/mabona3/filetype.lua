@@ -4,13 +4,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
         vim.keymap.set('n', 'gd', function() vim.lsp.buf.definition() end, opts)
         vim.keymap.set('n', 'K', function() vim.lsp.buf.hover() end, opts)
         vim.keymap.set('n', 'gD', function() vim.lsp.buf.declaration() end, opts)
-        vim.keymap.set('n', 'gi', function() vim.lsp.buf.implementation() end, opts)
-        vim.keymap.set('n', 'go', function() vim.lsp.buf.type_definition() end, opts)
-        vim.keymap.set('n', '<leader>vrn', function() vim.lsp.buf.references() end, opts)
-        vim.keymap.set('n', '<C-h>', function() vim.lsp.buf.signature_help() end, opts)
+        vim.keymap.set('n', 'grh', function() vim.lsp.buf.signature_help() end, opts)
         vim.keymap.set('n', '<leader>rn', function() vim.lsp.buf.rename() end, opts)
         vim.keymap.set({ 'n', 'x' }, '<leader>vf', function() vim.lsp.buf.format({ async = true }) end, opts)
-        vim.keymap.set('n', '<leader>vca', function() vim.lsp.buf.code_action() end, opts)
     end
 })
 

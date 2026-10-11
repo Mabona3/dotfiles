@@ -22,7 +22,7 @@ fi
 swaybg -i $new -m fill&
 
 if [ "$prev" != "$new" ]; then
-    wallust -s run "$new"
+    wallust run "$new"
     hyprctl hyprpaper unload "$prev"
     notify-send "$new" -i "$new"
     pkill -SIGUSR2 waybar

@@ -1,10 +1,5 @@
 @import url("colors.css");
 
-window#waybar {
-  background: rgba(0, 0, 0, 0);
-  color: white;
-}
-
 * {
   font-family: "JetBrains Mono", "Font Awesome 6 Free", sans-serif;
   font-weight: 800;
@@ -16,7 +11,7 @@ window#waybar {
 #workspaces {
   background: transparent;
   color: @foreground;
-  margin: 0px 3px
+  margin: 0px 3px;
 }
 
 #workspaces button {
@@ -34,7 +29,7 @@ window#waybar {
 }
 
 button:hover {
-  border: 1px solid @color4
+  border: 1px solid @color4;
 }
 
 #backlight {
@@ -54,6 +49,7 @@ button:hover {
   border-radius: 12px;
 }
 
+window#waybar,
 #workspaces button,
 #custom-prayer,
 #clock,
@@ -86,16 +82,16 @@ button:hover {
 #custom-prayer > span,
 #battery > span,
 #network {
-    font-family: "Material Symbols Rounded"
+  font-family: "Material Symbols Rounded";
 }
 
 #temperature.critical,
 #network.disconnected {
-  background-color: @color2
+  background-color: @color2;
 }
 
 .icon-span {
-    font-family: "Material Symbols Rounded"
+  font-family: "Material Symbols Rounded";
 }
 
 /* 
@@ -107,3 +103,8 @@ button:hover {
     border-radius: 12px;
 }
 */
+
+window#waybar {
+  background: transparent;
+}
+

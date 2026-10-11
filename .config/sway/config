@@ -10,14 +10,14 @@ set $term foot
 set $browser zen-browser
 set $files pcmanfm
 set $menu rofi
-set $image $(find ~/wallpaper/ -type f | shuf -n1)
+set $image ~/wallpaper/anime/dark-spider-man.jpg
 
 # set $drun_menu j4-dmenu-desktop
 # set $drun_menu_flags --dmenu="bemenu -i -p '' --fn 'JetBrains Mono 9' --hf '#c34043' --tf '#c34043' --tb '#000000cc' --fb '#000000cc' --nb '#000000cc' --hb '#000000cc' --sb '#000000cc' -R 6 --hp '3'"
 # set $menu_flags --fn 'JetBrains Mono 9' --hf '#c34043' --tf "#c34043" --tb "#000000cc" --fb "#000000cc" --nb "#000000cc" --hb "#000000cc" --sb "#000000cc" -R 6 -p "" --hp "3"
 
 exec swaybg -i $image
-exec wallust -s run $image
+exec wallust run $image
 exec swaync
 
 output HDMI-A-1 resolution 1920x1080 position 1920,0
